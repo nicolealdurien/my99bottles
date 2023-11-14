@@ -21,24 +21,24 @@ class Bottles
   end
 
   def verse(num)
-    bottle_plural = num == 1 ? '' : 's'
+    plural_or_not = num == 1 ? '' : 's'
 
-    end_plural = num == 2 ? '' : 's'
+    final_plural_or_not = num == 2 ? '' : 's'
 
     one_bottle = num == 1 ? 'it' : 'one'
 
-    beer_count_upper = num == 0 ? 'No more' : "#{num}"
+    item_count_upper = num == 0 ? 'No more' : "#{num}"
 
-    beer_count_lower = num == 0 ? 'no more' : "#{num}"
+    item_count_lower = num == 0 ? 'no more' : "#{num}"
 
-    beer_count_end = num > 1 ? num - 1 : num == 0 ? '99' : 'no more'
+    item_count_end = num > 1 ? num - 1 : num == 0 ? '99' : 'no more'
 
-    beer_run = num == 0 ? 'Go to the store and buy some more, ' : "Take #{one_bottle} down and pass it around, "
+    restart_or_not = num == 0 ? 'Go to the store and buy some more, ' : "Take #{one_bottle} down and pass it around, "
 
-    verse_string = "#{beer_count_upper} bottle#{bottle_plural} of beer on the wall, " +
-    "#{beer_count_lower} bottle#{bottle_plural} of beer.\n" +
-    "#{beer_run}" +
-    "#{beer_count_end} bottle#{end_plural} of beer on the wall.\n"
+    verse_string = "#{item_count_upper} bottle#{plural_or_not} of beer on the wall, " +
+    "#{item_count_lower} bottle#{plural_or_not} of beer.\n" +
+    "#{restart_or_not}" +
+    "#{item_count_end} bottle#{final_plural_or_not} of beer on the wall.\n"
 
     return verse_string 
   end
